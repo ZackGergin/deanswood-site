@@ -3,73 +3,61 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Willow Ridge Equestrian — Horse Riding School</title>
-  <meta name="description" content="An artistic, welcoming horse riding school offering lessons for all ages and abilities. Join us for a ride through fields, forests, and confidence."/>
+  <title>Deanswood Equestrian Centre — Riding School</title>
+  <meta name="description" content="Deanswood Equestrian Centre — friendly horse riding lessons for all ages & abilities. Book lessons, view our herd, and support the yard."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0f0f11;        /* ink */
-      --fg:#f7f5f2;        /* parchment */
-      --gold:#f1c27d;      /* sand gold */
-      --rose:#ff8fab;      /* rose accent */
-      --sage:#a8d5ba;      /* sage accent */
-      --ink:#101113;
-      --shadow:rgba(0,0,0,.25);
+      /* Ranch colour palette */
+      --bg:#0b0f0c;          /* deep pine */
+      --ink:#0b0f0c;
+      --fg:#f5efe6;          /* parchment */
+      --wheat:#d4b483;       /* wheat fields */
+      --barn:#a64533;        /* barn red */
+      --sage:#7a8f68;        /* sage brush */
+      --shadow:rgba(0,0,0,.28);
     }
-    html,body{height:100%;}
-    body{
-      margin:0; background: radial-gradient(1000px 600px at 10% 10%, #1b1d21 0%, var(--bg) 50%),
-                              radial-gradient(800px 500px at 90% 0%, #1a1719 0%, var(--bg) 60%),
-                              linear-gradient(180deg, #15161a, var(--bg));
-      color:var(--fg); font-family:Poppins, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      overflow-x:hidden;
+    html,body{height:100%}
+    body{margin:0; color:var(--fg); font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; overflow-x:hidden;
+      background: radial-gradient(1100px 700px at 10% -10%, #152018 0%, var(--bg) 60%),
+                  radial-gradient(900px 600px at 90% 0%, #1a231b 0%, var(--bg) 60%),
+                  linear-gradient(180deg, #0e140f, var(--bg));
     }
-    /* Artistic flourishes */
-    .blob{position:absolute; filter:blur(40px); opacity:.35; mix-blend-mode:screen; z-index:0;}
-    .blob.bl1{background:radial-gradient(circle at 30% 30%, var(--rose), transparent 60%); width:40vw; height:40vw; left:-10vw; top:-8vw;}
-    .blob.bl2{background:radial-gradient(circle at 60% 40%, var(--sage), transparent 60%); width:50vw; height:50vw; right:-15vw; top:-12vw;}
-    .blob.bl3{background:radial-gradient(circle at 50% 50%, #ffd6a5, transparent 65%); width:30vw; height:30vw; left:10vw; bottom:-10vw;}
 
-    header{
-      position:relative; z-index:1; padding:18px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px;
-    }
-    .brand{display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--fg);
-    }
-    .logo{
-      width:44px; height:44px; border-radius:50%; background:conic-gradient(from 200deg, var(--rose), var(--gold), var(--sage));
-      box-shadow:0 6px 18px var(--shadow);
-      display:grid; place-items:center; position:relative; overflow:hidden;
-    }
-    .logo svg{width:28px; height:28px; opacity:.9;}
-    .brand .name{font-family:"Playfair Display", serif; font-weight:800; letter-spacing:.5px; font-size:1.1rem;}
+    /* Subtle parchment texture overlay */
+    body::before{content:""; position:fixed; inset:0; pointer-events:none; opacity:.05; background-image:url('https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=2400&auto=format&fit=crop'); background-size:cover; mix-blend-mode:overlay}
 
-    nav a{color:var(--fg); text-decoration:none; opacity:.85; margin:0 10px; font-weight:500}
+    header{position:relative; z-index:2; padding:18px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px}
+    .brand{display:flex; align-items:center; gap:14px; text-decoration:none; color:var(--fg)}
+    .brand img{width:54px; height:54px; object-fit:contain; background:#ffffff; border-radius:50%; padding:6px; box-shadow:0 8px 24px var(--shadow)}
+    .brand .name{font-family:"Playfair Display",serif; font-weight:800; letter-spacing:.4px; font-size:1.1rem}
+
+    nav a{color:var(--fg); text-decoration:none; opacity:.9; margin:0 10px; font-weight:600}
     nav a:hover{opacity:1}
-    .cta{appearance:none; border:0; padding:12px 18px; border-radius:999px; background:linear-gradient(135deg, var(--rose), var(--gold)); color:#171717; font-weight:700; cursor:pointer; box-shadow:0 8px 24px rgba(241,194,125,.35);}
+    .cta{appearance:none; border:0; padding:12px 18px; border-radius:999px; background:linear-gradient(135deg, var(--wheat), var(--barn)); color:#1b120c; font-weight:800; cursor:pointer; box-shadow:0 10px 28px rgba(164,69,51,.35)}
     .cta:hover{transform:translateY(-1px)}
 
-    .hero{position:relative; z-index:1; padding:10vh 24px 16vh; display:grid; grid-template-columns:1.1fr .9fr; gap:36px; align-items:center; max-width:1150px; margin:0 auto;}
-    .hero h1{font-family:"Playfair Display", serif; font-weight:800; font-size:clamp(2.2rem, 5vw, 4rem); line-height:1.05; margin:0 0 12px}
-    .hero p{margin:0 0 22px; font-size:1.075rem; opacity:.92}
-    .hero .badges{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
-    .badge{border:1px solid rgba(255,255,255,.15); padding:8px 12px; border-radius:999px; font-size:.9rem; opacity:.9}
+    /* HERO */
+    .hero{position:relative; z-index:1; padding:12vh 24px 18vh;}
+    .hero .wrap{max-width:1150px; margin:0 auto; display:grid; grid-template-columns:1.05fr .95fr; gap:36px; align-items:center}
+    .hero h1{font-family:"Playfair Display",serif; font-weight:800; font-size:clamp(2.2rem, 5vw, 4rem); line-height:1.05; margin:0 0 12px}
+    .hero p{margin:0 0 22px; font-size:1.075rem; opacity:.95}
+    .badge{border:1px solid rgba(255,255,255,.14); padding:8px 12px; border-radius:999px; font-size:.9rem; opacity:.95; margin-right:8px}
 
-    .scene{position:relative; aspect-ratio:5/3; border-radius:24px; overflow:hidden; box-shadow:0 24px 60px rgba(0,0,0,.35);}
-    .scene .img{
-      background-image:url('https://images.unsplash.com/photo-1509942774463-acf339cf87d7?q=80&w=2600&auto=format&fit=crop');
-      background-size:cover; background-position:center; width:100%; height:100%; transform:scale(1.05);
-      filter:contrast(1.08) saturate(1.1) brightness(.92);
-    }
+    .scene{position:relative; aspect-ratio:5/3; border-radius:24px; overflow:hidden; box-shadow:0 24px 60px rgba(0,0,0,.35)}
+    .scene .img{background-image:url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2600&auto=format&fit=crop'); /* ranch house & fence */
+      background-size:cover; background-position:center; width:100%; height:100%; transform:scale(1.05); filter:contrast(1.06) saturate(1.05) brightness(.92)}
     .scene::after{content:""; position:absolute; inset:0; background:radial-gradient(60% 60% at 70% 40%, transparent 0 60%, rgba(0,0,0,.35) 80%), linear-gradient(180deg, transparent 0%, rgba(0,0,0,.35) 90%)}
 
-    .section{position:relative; z-index:1; padding:80px 24px;}
-    .wrap{max-width:1150px; margin:0 auto;}
+    /* SECTIONS */
+    .section{position:relative; z-index:1; padding:80px 24px}
+    .wrap{max-width:1150px; margin:0 auto}
     .split{display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:start}
 
-    h2{font-family:"Playfair Display", serif; font-size:clamp(1.6rem, 3.5vw, 2.4rem); margin:0 0 10px}
-    p.lead{opacity:.92}
+    h2{font-family:"Playfair Display",serif; font-size:clamp(1.6rem, 3.5vw, 2.4rem); margin:0 0 10px}
+    p.lead{opacity:.95}
 
     .card{background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:24px; padding:22px; box-shadow:0 12px 40px rgba(0,0,0,.25)}
     .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
@@ -83,14 +71,13 @@
     .donate-inputs{display:flex; gap:10px; flex-wrap:wrap}
     .donate-inputs input[type="number"]{flex:1 1 160px; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.12); background:#121316; color:var(--fg)}
     .donate-inputs button{padding:12px 16px; border-radius:12px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.06); color:var(--fg); cursor:pointer}
-    .donate-inputs button.active{background:linear-gradient(135deg, var(--rose), var(--gold)); color:#141414; font-weight:800}
+    .donate-inputs button.active{background:linear-gradient(135deg, var(--wheat), var(--barn)); color:#141414; font-weight:800}
 
     .footer{padding:50px 24px 90px; opacity:.9}
-    .footer .cta-min{display:inline-block; margin-top:8px;}
 
     /* Responsive */
     @media (max-width: 980px){
-      .hero{grid-template-columns:1fr; padding-top:7vh}
+      .hero .wrap{grid-template-columns:1fr; padding-top:0}
       .scene{order:-1}
       .split{grid-template-columns:1fr}
       .grid3{grid-template-columns:1fr 1fr}
@@ -103,21 +90,11 @@
   </style>
 </head>
 <body>
-  <!-- dreamy color blobs -->
-  <div class="blob bl1" aria-hidden="true"></div>
-  <div class="blob bl2" aria-hidden="true"></div>
-  <div class="blob bl3" aria-hidden="true"></div>
-
   <header class="wrap">
-    <a class="brand" href="#top" aria-label="Willow Ridge Equestrian home">
-      <span class="logo" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M4 16c4-1 4-7 8-8 3-1 6 1 8 4"/>
-          <path d="M4 16c3 2 6 2 8 2s5-.3 8-2"/>
-          <path d="M6 10c1-2 3-3 6-3 2 0 4 1 6 3"/>
-        </svg>
-      </span>
-      <span class="name">Willow Ridge Equestrian</span>
+    <a class="brand" href="#top" aria-label="Deanswood Equestrian Centre home">
+      <!-- Replace src with your real file path. If you place the provided logo at ./assets/logo-deanswood.png this will just work. -->
+      <img src="./assets/logo-deanswood.png" alt="Deanswood Equestrian Centre logo" onerror="this.style.display='none'">
+      <span class="name">Deanswood Equestrian Centre</span>
     </a>
     <nav aria-label="primary navigation">
       <a href="#lessons">Lessons</a>
@@ -131,18 +108,20 @@
 
   <main id="top">
     <section class="hero">
-      <div>
-        <h1>Ride with grace.<br/>Learn with confidence.</h1>
-        <p>We’re a community‑minded riding school teaching horsemanship for beginners to advanced riders. Quiet lanes, forest trails, and an arena kissed by golden hour — all on your doorstep.</p>
-        <div class="badges" aria-label="quick badges">
-          <span class="badge">Beginner‑friendly</span>
-          <span class="badge">BHS‑inspired curriculum</span>
-          <span class="badge">Group & private lessons</span>
+      <div class="wrap">
+        <div>
+          <h1>Ride with confidence.<br/>Learn with kindness.</h1>
+          <p>Lessons for absolute beginners through to advanced riders, with quiet lanes, woodland tracks, and a friendly arena at our ranch‑style yard.</p>
+          <div>
+            <span class="badge">Beginner‑friendly</span>
+            <span class="badge">Group & Private</span>
+            <span class="badge">Children & Adults</span>
+          </div>
         </div>
+        <figure class="scene" aria-label="Ranch scene with horses and fencing">
+          <div class="img" role="img" aria-label="Ranch backdrop"></div>
+        </figure>
       </div>
-      <figure class="scene" aria-label="Rider cantering in a twilight arena with dust motes in the glow">
-        <div class="img" role="img" aria-label="Rider cantering in a twilight arena"></div>
-      </figure>
     </section>
 
     <section id="lessons" class="section">
@@ -150,34 +129,34 @@
         <div class="split">
           <div>
             <h2>Lessons & Programmes</h2>
-            <p class="lead">From first trot to collected canter, our coaches tailor each session to your goals, confidence, and riding style.</p>
+            <p class="lead">From first trot to canter, our coaches tailor each session to your goals, confidence and style.</p>
             <div class="grid3" style="margin-top:18px">
               <div class="card">
                 <h3>Discovery Ride</h3>
-                <p>Perfect for complete beginners. Build balance, posture, and a love for the saddle in a calm, supportive setting.</p>
+                <p>Perfect for first‑timers. Balance, posture and basic aids in a calm setting.</p>
                 <p><strong>£35</strong> / 30 mins</p>
               </div>
               <div class="card">
                 <h3>Arena Foundations</h3>
-                <p>Work on aids, transitions, and control. Suitable for riders comfortable at walk & trot, learning to canter.</p>
+                <p>Steering, transitions & control. Great for riders moving towards canter.</p>
                 <p><strong>£55</strong> / 60 mins</p>
               </div>
               <div class="card">
                 <h3>Trail Confidence</h3>
-                <p>Guided hacks across lanes and fields. Develop road sense, steady pace, and real‑world riding awareness.</p>
+                <p>Guided hacks on lanes and tracks. Learn steady pace & road sense.</p>
                 <p><strong>£60</strong> / 75 mins</p>
               </div>
             </div>
           </div>
           <div>
             <div class="card">
-              <h3 style="margin-top:0">Why choose us</h3>
+              <h3 style="margin-top:0">Why Deanswood</h3>
               <ul>
-                <li>Quiet, well‑mannered horses matched to each rider</li>
-                <li>Safety‑first approach with a friendly, encouraging tone</li>
-                <li>Shoes, hats & body protectors available to borrow</li>
-                <li>Family Saturdays & After‑school clubs</li>
-                <li>Gift vouchers & seasonal camps</li>
+                <li>Kind, confidence‑building coaching</li>
+                <li>Horses matched carefully to riders</li>
+                <li>Hats & body protectors available</li>
+                <li>After‑school clubs & camps</li>
+                <li>Gift vouchers</li>
               </ul>
             </div>
           </div>
@@ -188,23 +167,24 @@
     <section id="gallery" class="section">
       <div class="wrap">
         <h2>Gallery</h2>
-        <p class="lead">Moments in motion — a few favourite frames.</p>
+        <p class="lead">A few moments from the yard.</p>
         <div class="grid4" style="margin-top:16px">
+          <!-- Use the images you provided by placing them in ./assets/ with the file names below -->
           <div class="tile">
-            <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1521198291732-cd83b2e0e087?q=80&w=1200&auto=format&fit=crop');"></div>
-            <div class="tx">Sunlit walk in the meadows</div>
+            <div class="ph" style="background-image:url('./assets/LARKRIGG_023.webp');"></div>
+            <div class="tx">Little riders, big smiles</div>
           </div>
           <div class="tile">
-            <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1520740115241-04b4b8edb4e0?q=80&w=1200&auto=format&fit=crop');"></div>
-            <div class="tx">Arena circles & soft contact</div>
+            <div class="ph" style="background-image:url('./assets/ponies-in-autumn-leaves-1024x683.jpg');"></div>
+            <div class="tx">Autumn hacks</div>
           </div>
           <div class="tile">
-            <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1523731407965-2430cd12f5e4?q=80&w=1200&auto=format&fit=crop');"></div>
-            <div class="tx">Forest trail at golden hour</div>
+            <div class="ph" style="background-image:url('./assets/shutterstock_349919024.jpg');"></div>
+            <div class="tx">Learning together</div>
           </div>
           <div class="tile">
-            <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?q=80&w=1200&auto=format&fit=crop');"></div>
-            <div class="tx">Tiny trotters pony club</div>
+            <div class="ph" style="background-image:url('./assets/Arabian-1024x724.jpg');"></div>
+            <div class="tx">In the arena</div>
           </div>
         </div>
       </div>
@@ -213,16 +193,15 @@
     <section id="about" class="section">
       <div class="wrap split">
         <div>
-          <h2>About Willow Ridge</h2>
-          <p class="lead">Born from a love of horses and teaching, Willow Ridge is a small, family‑run school on the edge of town. Our yard is quiet, our fields are wide, and our kettle is always on.</p>
-          <p>We believe good riding is kind riding — for horses and humans alike. That means patient tuition, gradual goals, and celebrating every little win (first rising trot, anyone?).</p>
+          <h2>About Deanswood</h2>
+          <p class="lead">We’re a friendly, family‑run yard with a ranch feel — open spaces, calm horses and a kettle that’s always on.</p>
+          <p>We believe good riding is kind riding: patient tuition, steady progress and celebrating every little win.</p>
         </div>
         <div>
           <div class="card">
-            <h3 style="margin-top:0">Meet the team</h3>
-            <p><strong>Ella (Head Coach)</strong> — Flatwork geek, fearless on foggy mornings.</p>
-            <p><strong>Mo (Stable Lead)</strong> — Plaiting wizard. Tack whisperer. Treat distributor.</p>
-            <p><strong>Star, Bramble, Juno & Ash</strong> — Our patient teachers with big hearts and bigger hay nets.</p>
+            <h3 style="margin-top:0">Meet the herd</h3>
+            <p><strong>Star, Bramble, Juno & Ash</strong> — our gentle teachers with big hearts and bigger hay nets.</p>
+            <p class="lead">Want your photo here? Email a favourite Deanswood moment and we’ll add it!</p>
           </div>
         </div>
       </div>
@@ -231,8 +210,8 @@
     <section id="donate" class="section">
       <div class="wrap split">
         <div>
-          <h2>Support the herd</h2>
-          <p class="lead">Your generosity keeps our horses healthy and our community lessons affordable. Thank you for helping us saddle up future riders.</p>
+          <h2>Support the yard</h2>
+          <p class="lead">Donations help us keep lessons affordable, maintain our facilities and pamper our ponies. Thank you!</p>
           <div class="card donate-box" role="form" aria-label="Donations form">
             <div class="donate-inputs">
               <button type="button" data-amount="10">£10</button>
@@ -242,14 +221,14 @@
               <input id="customAmount" type="number" min="1" step="1" placeholder="Custom amount (£)" aria-label="Custom donation amount">
             </div>
             <button id="donateBtn" class="cta" style="align-self:flex-start">Donate securely</button>
-            <p class="note">This button will take you to our secure checkout. Replace the placeholder URL in the script with your Stripe or PayPal link.</p>
+            <p class="note">Replace the placeholder link in the script with your Stripe or PayPal donate URL.</p>
           </div>
         </div>
         <div>
           <div class="card">
             <h3 style="margin-top:0">Other ways to help</h3>
             <ul>
-              <li>Monthly sponsorship for a favourite horse</li>
+              <li>Monthly horse sponsorship</li>
               <li>Donate tack in good condition</li>
               <li>Volunteer at weekend tidy‑ups</li>
             </ul>
@@ -262,16 +241,16 @@
       <div class="wrap split">
         <div>
           <h2>Book a ride</h2>
-          <p class="lead">Ready to mount up? We’d love to hear from you.</p>
+          <p class="lead">We’d love to hear from you.</p>
           <p>
-            <a class="cta" href="mailto:hello@willowridgeequestrian.uk?subject=Lesson%20Enquiry%20from%20Website" aria-label="Send us an email">Email us</a>
+            <a class="cta" href="mailto:hello@deanswood-equestrian.uk?subject=Lesson%20Enquiry%20from%20Website" aria-label="Send us an email">Email us</a>
           </p>
           <p>Or call <a href="tel:+441612345678" style="color:var(--fg); font-weight:600">0161 234 5678</a></p>
         </div>
         <div>
           <div class="card">
             <h3 style="margin-top:0">Find us</h3>
-            <p>Willow Ridge Equestrian<br> Willow Lane, Greenfield, UK</p>
+            <p>Deanswood Equestrian Centre<br> Willow Lane, Greenfield, UK</p>
             <p>Parking on site • Accessible loo • Viewing deck</p>
           </div>
         </div>
@@ -281,9 +260,9 @@
 
   <footer class="footer wrap">
     <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; justify-content:space-between">
-      <div style="opacity:.9">© <span id="y"></span> Willow Ridge Equestrian. All rights reserved.</div>
+      <div style="opacity:.9">© <span id="y"></span> Deanswood Equestrian Centre. All rights reserved.</div>
       <div>
-        <a class="cta cta-min" href="#top">Back to top</a>
+        <a class="cta" href="#top">Back to top</a>
       </div>
     </div>
   </footer>
@@ -313,11 +292,9 @@
 
     donateBtn.addEventListener('click', ()=>{
       const amt = isFinite(selected) && selected>0 ? selected.toFixed(2) : '10.00';
-      // TODO: Replace this placeholder with your real checkout link
-      // Example Stripe Payment Link format: https://buy.stripe.com/your_code?prefilled_amount=XX
-      // Example PayPal: https://www.paypal.com/donate?business=YOUR_ID&amount=XX&currency_code=GBP
-      const STRIPE_OR_PAYPAL_URL = 'https://buy.stripe.com/test_1234567890'; // <-- replace me
-      const url = STRIPE_OR_PAYPAL_URL + (STRIPE_OR_PAYPAL_URL.includes('?') ? '&' : '?') + 'amount=' + encodeURIComponent(amt);
+      // TODO: Replace with your real checkout link
+      const CHECKOUT_URL = 'https://buy.stripe.com/test_1234567890'; // <-- replace me
+      const url = CHECKOUT_URL + (CHECKOUT_URL.includes('?') ? '&' : '?') + 'amount=' + encodeURIComponent(amt);
       window.location.href = url;
     });
   </script>
